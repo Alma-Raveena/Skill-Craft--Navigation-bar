@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skill Craft - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #f4f9ff, #dcefff);
+      height: 200vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    nav.scrolled {
+      background: rgba(21, 30, 47, 0.9);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 22px;
+      color: #2563eb;
+    }
+
+    nav.scrolled .logo {
+      color: #f3f4f6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #1f2937;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      padding: 6px 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled .nav-links a {
+      color: #e5e7eb;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      transform: scale(1.05);
+      color: #10b981;
+    }
+
+    section {
+      padding: 120px 30px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #1e40af;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      color: #374151;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">Skill Craft</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="home">
+    <h1>Welcome to Skill Craft Technology</h1>
+    <p>Empowering future tech innovators through skill-based learning. Scroll to discover more about us.</p>
+  </section>
+
+  <section id="about">
+    <h1>About Us</h1>
+    <p>Skill Craft is a dynamic platform designed to help students and developers upskill in modern technologies. We offer real-world projects, mentorship, and industry-aligned training to bridge the gap between learning and implementation.</p>
+  </section>
+
+  <section id="skills">
+    <h1>Our Skills</h1>
+    <p>We specialize in Full Stack Development, Frontend UI/UX, Backend APIs, Python, Java, Data Science, and Web3. Our training combines hands-on projects, peer learning, and real-world challenges.</p>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>Got a question or want to collaborate? Email us at <strong>support@skillcraft.in</strong> or connect via LinkedIn/Instagram.</p>
+  </section>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
